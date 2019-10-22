@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tw.com.sdms.dao.Tbdu01Mapper">
+  <resultMap id="BaseResultMap" type="tw.com.sdms.bean.Tbdu01">
+    <id column="COMPNO" jdbcType="VARCHAR" property="compno" />
+    <id column="USERNO" jdbcType="VARCHAR" property="userno" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="POSTNO" jdbcType="VARCHAR" property="postno" />
+    <result column="DEPNO" jdbcType="VARCHAR" property="depno" />
+    <result column="PERSONID" jdbcType="VARCHAR" property="personid" />
+    <result column="CNAME" jdbcType="VARCHAR" property="cname" />
+    <result column="ENAME" jdbcType="VARCHAR" property="ename" />
+    <result column="BIRTHDAY" jdbcType="VARCHAR" property="birthday" />
+    <result column="PHONE1" jdbcType="VARCHAR" property="phone1" />
+    <result column="PHONE2" jdbcType="VARCHAR" property="phone2" />
+    <result column="PHONE3" jdbcType="VARCHAR" property="phone3" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="CITY" jdbcType="VARCHAR" property="city" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="VALIDDATE" jdbcType="VARCHAR" property="validdate" />
+    <result column="POSTNO2" jdbcType="VARCHAR" property="postno2" />
+    <result column="DEPNO2" jdbcType="VARCHAR" property="depno2" />
+    <result column="IDTYPE" jdbcType="VARCHAR" property="idtype" />
+    <result column="ADDRESS2" jdbcType="VARCHAR" property="address2" />
+    <result column="REMITBANK1" jdbcType="VARCHAR" property="remitbank1" />
+    <result column="REMITACCT1" jdbcType="VARCHAR" property="remitacct1" />
+    <result column="PAYTYPE" jdbcType="CHAR" property="paytype" />
+    <result column="SUBCOMPNO" jdbcType="VARCHAR" property="subcompno" />
+    <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+    <result column="EMPNO" jdbcType="VARCHAR" property="empno" />
+    <result column="CREATEUSER" jdbcType="VARCHAR" property="createuser" />
+    <result column="CREATEDATE" jdbcType="BIGINT" property="createdate" />
+    <result column="MODIFYUSER" jdbcType="VARCHAR" property="modifyuser" />
+    <result column="MODIFYDATE" jdbcType="BIGINT" property="modifydate" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from tbdu01
+    where COMPNO = #{compno,jdbcType=VARCHAR}
+      and USERNO = #{userno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="tw.com.sdms.bean.Tbdu01">
+    insert into tbdu01 (COMPNO, USERNO, SEX, 
+      POSTNO, DEPNO, PERSONID, 
+      CNAME, ENAME, BIRTHDAY, 
+      PHONE1, PHONE2, PHONE3, 
+      EMAIL, CITY, ADDRESS, 
+      VALIDDATE, POSTNO2, DEPNO2, 
+      IDTYPE, ADDRESS2, REMITBANK1, 
+      REMITACCT1, PAYTYPE, SUBCOMPNO, 
+      MEMO, EMPNO, CREATEUSER, 
+      CREATEDATE, MODIFYUSER, MODIFYDATE, 
+      STATUS)
+    values (#{compno,jdbcType=VARCHAR}, #{userno,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{postno,jdbcType=VARCHAR}, #{depno,jdbcType=VARCHAR}, #{personid,jdbcType=VARCHAR}, 
+      #{cname,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
+      #{phone1,jdbcType=VARCHAR}, #{phone2,jdbcType=VARCHAR}, #{phone3,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{validdate,jdbcType=VARCHAR}, #{postno2,jdbcType=VARCHAR}, #{depno2,jdbcType=VARCHAR}, 
+      #{idtype,jdbcType=VARCHAR}, #{address2,jdbcType=VARCHAR}, #{remitbank1,jdbcType=VARCHAR}, 
+      #{remitacct1,jdbcType=VARCHAR}, #{paytype,jdbcType=CHAR}, #{subcompno,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{empno,jdbcType=VARCHAR}, #{createuser,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=BIGINT}, #{modifyuser,jdbcType=VARCHAR}, #{modifydate,jdbcType=BIGINT}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="tw.com.sdms.bean.Tbdu01">
+    update tbdu01
+    set SEX = #{sex,jdbcType=VARCHAR},
+      POSTNO = #{postno,jdbcType=VARCHAR},
+      DEPNO = #{depno,jdbcType=VARCHAR},
+      PERSONID = #{personid,jdbcType=VARCHAR},
+      CNAME = #{cname,jdbcType=VARCHAR},
+      ENAME = #{ename,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=VARCHAR},
+      PHONE1 = #{phone1,jdbcType=VARCHAR},
+      PHONE2 = #{phone2,jdbcType=VARCHAR},
+      PHONE3 = #{phone3,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      CITY = #{city,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      VALIDDATE = #{validdate,jdbcType=VARCHAR},
+      POSTNO2 = #{postno2,jdbcType=VARCHAR},
+      DEPNO2 = #{depno2,jdbcType=VARCHAR},
+      IDTYPE = #{idtype,jdbcType=VARCHAR},
+      ADDRESS2 = #{address2,jdbcType=VARCHAR},
+      REMITBANK1 = #{remitbank1,jdbcType=VARCHAR},
+      REMITACCT1 = #{remitacct1,jdbcType=VARCHAR},
+      PAYTYPE = #{paytype,jdbcType=CHAR},
+      SUBCOMPNO = #{subcompno,jdbcType=VARCHAR},
+      MEMO = #{memo,jdbcType=VARCHAR},
+      EMPNO = #{empno,jdbcType=VARCHAR},
+      CREATEUSER = #{createuser,jdbcType=VARCHAR},
+      CREATEDATE = #{createdate,jdbcType=BIGINT},
+      MODIFYUSER = #{modifyuser,jdbcType=VARCHAR},
+      MODIFYDATE = #{modifydate,jdbcType=BIGINT},
+      STATUS = #{status,jdbcType=VARCHAR}
+    where COMPNO = #{compno,jdbcType=VARCHAR}
+      and USERNO = #{userno,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select COMPNO, USERNO, SEX, POSTNO, DEPNO, PERSONID, CNAME, ENAME, BIRTHDAY, PHONE1, 
+    PHONE2, PHONE3, EMAIL, CITY, ADDRESS, VALIDDATE, POSTNO2, DEPNO2, IDTYPE, ADDRESS2, 
+    REMITBANK1, REMITACCT1, PAYTYPE, SUBCOMPNO, MEMO, EMPNO, CREATEUSER, CREATEDATE, 
+    MODIFYUSER, MODIFYDATE, STATUS
+    from tbdu01
+    where COMPNO = #{compno,jdbcType=VARCHAR}
+      and USERNO = #{userno,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select COMPNO, USERNO, SEX, POSTNO, DEPNO, PERSONID, CNAME, ENAME, BIRTHDAY, PHONE1, 
+    PHONE2, PHONE3, EMAIL, CITY, ADDRESS, VALIDDATE, POSTNO2, DEPNO2, IDTYPE, ADDRESS2, 
+    REMITBANK1, REMITACCT1, PAYTYPE, SUBCOMPNO, MEMO, EMPNO, CREATEUSER, CREATEDATE, 
+    MODIFYUSER, MODIFYDATE, STATUS
+    from tbdu01
+  </select>
+</mapper>

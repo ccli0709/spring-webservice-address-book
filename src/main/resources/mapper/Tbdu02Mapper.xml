@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tw.com.sdms.dao.Tbdu02Mapper">
+  <resultMap id="BaseResultMap" type="tw.com.sdms.bean.Tbdu02">
+    <id column="COMPID" jdbcType="VARCHAR" property="compid" />
+    <id column="USERNO" jdbcType="VARCHAR" property="userno" />
+    <result column="CRYPTOPW" jdbcType="VARCHAR" property="cryptopw" />
+    <result column="RANDOMKEY" jdbcType="VARCHAR" property="randomkey" />
+    <result column="LASTDATE" jdbcType="VARCHAR" property="lastdate" />
+    <result column="IP" jdbcType="VARCHAR" property="ip" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from tbdu02
+    where COMPID = #{compid,jdbcType=VARCHAR}
+      and USERNO = #{userno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="tw.com.sdms.bean.Tbdu02">
+    insert into tbdu02 (COMPID, USERNO, CRYPTOPW, 
+      RANDOMKEY, LASTDATE, IP
+      )
+    values (#{compid,jdbcType=VARCHAR}, #{userno,jdbcType=VARCHAR}, #{cryptopw,jdbcType=VARCHAR}, 
+      #{randomkey,jdbcType=VARCHAR}, #{lastdate,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="tw.com.sdms.bean.Tbdu02">
+    update tbdu02
+    set CRYPTOPW = #{cryptopw,jdbcType=VARCHAR},
+      RANDOMKEY = #{randomkey,jdbcType=VARCHAR},
+      LASTDATE = #{lastdate,jdbcType=VARCHAR},
+      IP = #{ip,jdbcType=VARCHAR}
+    where COMPID = #{compid,jdbcType=VARCHAR}
+      and USERNO = #{userno,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select COMPID, USERNO, CRYPTOPW, RANDOMKEY, LASTDATE, IP
+    from tbdu02
+    where COMPID = #{compid,jdbcType=VARCHAR}
+      and USERNO = #{userno,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select COMPID, USERNO, CRYPTOPW, RANDOMKEY, LASTDATE, IP
+    from tbdu02
+  </select>
+</mapper>
