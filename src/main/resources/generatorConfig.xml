@@ -24,14 +24,14 @@
 		<!-- 要產生的model位置，targetProject的值為專案的Source folder，所以是moneynote/src/main/java -->
 		<!-- 文件裡的entity對應到我的bean -->
 		<javaModelGenerator
-			targetPackage="tw.com.sdms.bean"
+			targetPackage="tw.com.sdms.model"
 			targetProject="spring-webservice-address-book/src/main/java" />
 		<!-- 要產生的MyBatis Mapper位置 -->
-		<sqlMapGenerator targetPackage="mapper"
+		<sqlMapGenerator targetPackage="tw.com.sdms.mapper"
 			targetProject="spring-webservice-address-book/src/main/resources" />
 		<!-- 要產生的MyBatis Dao位置 -->
 		<javaClientGenerator
-			targetPackage="tw.com.sdms.dao"
+			targetPackage="tw.com.sdms.mapper"
 			targetProject="spring-webservice-address-book/src/main/java"
 			type="XMLMAPPER" /><!-- MyBatis Mapper設為xml格式 -->
 

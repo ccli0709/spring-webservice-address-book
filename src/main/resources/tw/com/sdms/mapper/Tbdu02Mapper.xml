@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tw.com.sdms.dao.Tbdu02Mapper">
-  <resultMap id="BaseResultMap" type="tw.com.sdms.bean.Tbdu02">
+<mapper namespace="tw.com.sdms.mapper.Tbdu02Mapper">
+  <resultMap id="BaseResultMap" type="tw.com.sdms.model.Tbdu02">
     <id column="COMPID" jdbcType="VARCHAR" property="compid" />
     <id column="USERNO" jdbcType="VARCHAR" property="userno" />
     <result column="CRYPTOPW" jdbcType="VARCHAR" property="cryptopw" />
@@ -14,7 +14,7 @@
     where COMPID = #{compid,jdbcType=VARCHAR}
       and USERNO = #{userno,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="tw.com.sdms.bean.Tbdu02">
+  <insert id="insert" parameterType="tw.com.sdms.model.Tbdu02">
     insert into tbdu02 (COMPID, USERNO, CRYPTOPW, 
       RANDOMKEY, LASTDATE, IP
       )
@@ -22,7 +22,7 @@
       #{randomkey,jdbcType=VARCHAR}, #{lastdate,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="tw.com.sdms.bean.Tbdu02">
+  <update id="updateByPrimaryKey" parameterType="tw.com.sdms.model.Tbdu02">
     update tbdu02
     set CRYPTOPW = #{cryptopw,jdbcType=VARCHAR},
       RANDOMKEY = #{randomkey,jdbcType=VARCHAR},

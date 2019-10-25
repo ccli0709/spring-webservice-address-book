@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tw.com.sdms.dao.Tbdu01Mapper">
-  <resultMap id="BaseResultMap" type="tw.com.sdms.bean.Tbdu01">
+<mapper namespace="tw.com.sdms.mapper.Tbdu01Mapper">
+  <resultMap id="BaseResultMap" type="tw.com.sdms.model.Tbdu01">
     <id column="COMPNO" jdbcType="VARCHAR" property="compno" />
     <id column="USERNO" jdbcType="VARCHAR" property="userno" />
     <result column="SEX" jdbcType="VARCHAR" property="sex" />
@@ -39,7 +39,7 @@
     where COMPNO = #{compno,jdbcType=VARCHAR}
       and USERNO = #{userno,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="tw.com.sdms.bean.Tbdu01">
+  <insert id="insert" parameterType="tw.com.sdms.model.Tbdu01">
     insert into tbdu01 (COMPNO, USERNO, SEX, 
       POSTNO, DEPNO, PERSONID, 
       CNAME, ENAME, BIRTHDAY, 
@@ -63,7 +63,7 @@
       #{createdate,jdbcType=BIGINT}, #{modifyuser,jdbcType=VARCHAR}, #{modifydate,jdbcType=BIGINT}, 
       #{status,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="tw.com.sdms.bean.Tbdu01">
+  <update id="updateByPrimaryKey" parameterType="tw.com.sdms.model.Tbdu01">
     update tbdu01
     set SEX = #{sex,jdbcType=VARCHAR},
       POSTNO = #{postno,jdbcType=VARCHAR},

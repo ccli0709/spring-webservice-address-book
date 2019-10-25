@@ -1,4 +1,4 @@
-package tw.com.sdms.bean;
+package tw.com.sdms.model;
 
 public class Tbdu01 {
     private String compno;
